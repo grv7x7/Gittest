@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+<title>Home Rango</title>
+
+
+<style>
+.cat{
+
+  color: black;
+}
+
+</style>
+
+
+
+<style>
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+
+div.relative {
+    position: relative;
+    top:-350px;
+    left: 920px;
+    width:350px;
+    
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<!-- Code for Pages -->
+<div>
+
+
+  </br>
+  <h3> <font color="black">Most viewed pages</font> </h3>
+  {% if pages %}
+   <ul>
+   {% for page in pages %}
+   <li>{{ page.title }}</li></br>
+   {% endfor %}    
+   </ul>
+  {% else %}
+  <strong>There are no pages present.</strong>
+  {% endif %}   
+
+</div>
+
+<!-- Code for Pages ends here-->
+
+<!-- Code for Category -->
+
+<div>
+
+
+
+  <h3> <font color="black">Most Liked categories</font> </h3>
+  {% if categories %}
+  <ul class = "cat">
+   {% for category in categories %}
+   <li class = "cat"><a href="/rango/category/{{ category.slug }}" style="text-decoration:none" target="blank">{{ category.name }}</a> </li></br>
+   {% endfor %}    
+  </ul>
+ 
+ {% else %}
+ <strong>There are no categories present.</strong>
+ {% endif %}   
+
+</div>  
+
+<!-- Code for category ends here -->
+
+
+<div class="relative"> Minion welcomes you all to the home page
+  <img src="{% static "images/minion_guitar.png" %}" alt="Picture of Rango"  width="350" height="300">
+</a>
+
+</div>   
+
+
+
+
+
+
+
+
+<body>
+  </html>
+
+  

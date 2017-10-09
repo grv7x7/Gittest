@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rango</title>
+
+</head>
+<style>
+body {
+background-image: url("stevejobs.jpg");
+    background-color: #E6E6FA;
+}
+
+</style>
+<body>
+<div>
+
+  
+{% if category %}
+    <h1>{{ category.name }}</h1>
+    {% if pages %}
+        <ul>
+        {% for page in pages %}
+             <h4><a href="{{ page.url }}">{{ page.title }}</a></h4>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <strong>No pages currently in category.</strong>
+    {% endif %}
+{% else %}
+T   The specified category does not exist!
+{% endif %}
+</div>
+</body>
+</html>
